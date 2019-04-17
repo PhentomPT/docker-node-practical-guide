@@ -7,20 +7,19 @@
 
 [Dockerfile](/resources/Dockerfile.md#Dockerfile)
 
-
 - Multiverse API
 
 [Dockerfile](/resources/Dockerfile.md#Dockerfile)
 
-[docker-compose.yaml](/resources/compose.md#docker-compose.yaml)
+[docker-compose.yaml](/resources/compose.md#docker-composeyaml)
 
 - Multiverse Multienv API
 
-[Dockerfile](/resources/Dockerfile.md#Dockerfile)
+[Dockerfile](/resources/Dockerfile.md#Dockerfile-1)
 
-[dev-compose.yaml](/resources/compose.md#dev-compose.yaml)
+[dev-compose.yaml](/resources/compose.md#dev-composeyaml)
 
-[prod-compose.yaml](/resources/compose.md#prod-compose.yaml)
+[prod-compose.yaml](/resources/compose.md#prod-composeyaml)
 
 ## Tutorial 📘
 ### Stand alone API

@@ -1,4 +1,4 @@
-## Stand alone API
+## Stand alone & Multiverse API
 
 ### Dockerfile
 ```dockerfile
