@@ -121,7 +121,7 @@ When accessing the [API add user link](http://localhost:8081/add-user) a new use
 You can view the information via the [DB Manager](http://localhost:8082) with the above login information.
 
 | System | Username | Password | Database |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | PostgreSQL | postgres | root | postgres |
 
 As you can see it's easier to manage multiple apps and tools locally with this approach 🐳
