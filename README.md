@@ -2,52 +2,25 @@
 - [Docker](https://docker.com)
 
 ## Resources 📜
-### The Dockerfile 
-```Dockerfile
-# Base image to be used in this project
-FROM node:10-alpine
 
-# Copying the content from the project root folder to the system work directory
-COPY . /app
+- Stand alone API
 
-# Setting the work directory for the current process
-WORKDIR /app
+[Dockerfile](/resources/Dockerfile.md#Dockerfile)
 
-# Command/s to run before the project initializes
-RUN npm install
 
-# Poxying the external port 8081 to the internal port 3000
-EXPOSE 8081:3000
+- Multiverse API
 
-# The start up command for the project
-CMD [ "npm", "start" ]
-```
+[Dockerfile](/resources/Dockerfile.md#Dockerfile)
 
-### The docker-compose.yaml
-```yaml
-# The version of the docker compose that will be used
-version: '3.4'
+[docker-compose.yaml](/resources/compose.md#docker-compose.yaml)
 
-# Services to declare
-services: 
-  # API web server based on a existing docker build
-  api:
-    build: .
-    ports: 
-      - '8081:3000'
-    depends_on: 
-      - db
-  # A DB service to create base on a image
-  db:
-    image: postgres:9.4.21-alpine
-    environment: 
-      POSTGRES_PASSWORD: root
-  # A DB admin web interface based on a image just to check data
-  adminer:
-    image: adminer
-    ports:
-      - '8082:8080'
-```
+- Multiverse Multienv API
+
+[Dockerfile](/resources/Dockerfile.md#Dockerfile)
+
+[dev-compose.yaml](/resources/compose.md#dev-compose.yaml)
+
+[prod-compose.yaml](/resources/compose.md#prod-compose.yaml)
 
 ## Tutorial 📘
 ### Stand alone API
