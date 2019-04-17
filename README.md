@@ -3,23 +3,17 @@
 
 ## Resources 📜
 
-- Stand alone API
+### Stand alone API
+- [Dockerfile](/resources/Dockerfile.md#Dockerfile)
 
-[Dockerfile](/resources/Dockerfile.md#Dockerfile)
+### Multiverse API
+- [Dockerfile](/resources/Dockerfile.md#Dockerfile)
+- [docker-compose.yaml](/resources/compose.md#docker-composeyaml)
 
-- Multiverse API
-
-[Dockerfile](/resources/Dockerfile.md#Dockerfile)
-
-[docker-compose.yaml](/resources/compose.md#docker-composeyaml)
-
-- Multiverse Multienv API
-
-[Dockerfile](/resources/Dockerfile.md#Dockerfile-1)
-
-[dev-compose.yaml](/resources/compose.md#dev-composeyaml)
-
-[prod-compose.yaml](/resources/compose.md#prod-composeyaml)
+### Multiverse Multienv API
+- [Dockerfile](/resources/Dockerfile.md#Dockerfile-1)
+- [dev-compose.yaml](/resources/compose.md#dev-composeyaml)
+- [prod-compose.yaml](/resources/compose.md#prod-composeyaml)
 
 ## Tutorial 📘
 ### Stand alone API
@@ -106,9 +100,7 @@ Everytime i change the code i have to stop the docker service and build it again
 We will make an 2 docker-composer files and add targets to the Dockerfile
 
 - In the docker file change the first line to look something like this ``FROM node:10-alpine AS prod``, with this we are making a target that we can use in the docker-compose
-
 - Rename the ``docker-compose.yaml`` to ``prod-compose.yaml``
-
 - On the ``build: .`` line change it to use the prod target we just created in the Dockerfile
 ```yaml
     build: 
@@ -117,22 +109,16 @@ We will make an 2 docker-composer files and add targets to the Dockerfile
 ```
 
 - Everyting should be working the same, but the command to start it up should now be the following
-
 ```shell
 $ docker-compose -f prod-compose.yaml up --build
 ```
 Lets make the **development** part now!
 
 - In the Dockerfile make a copy of the content and paste it below the existing one
-
 - Rename the target from ``prod`` to ``dev`` on the copied content
-
 - Change the ``CMD`` command to ``CMD [ "npm", "run", "dev" ]``
-
 - Make a copy of the ``prod-compose.yaml`` and name it ``dev-compose.yaml``
-
 - In the ``dev-compose.yaml`` change the target from ``prod`` to ``dev``
-
 - Add a ``volume`` property to the ``api`` service like soo, this will create a bind from our project to the docker container
 ```yaml
     volumes:
